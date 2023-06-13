@@ -1,16 +1,17 @@
 parameters: {}
 environment: {}
 packages:
-  - name: sample
+  - name: book-me
     shared: false
-    environment: {}
+    environment:
+      beanstalkd_host: ${BEANSTALKD_HOST}
     parameters: {}
     annotations: {}
     functions:
-      - name: hello
+      - name: book
         binary: false
         main: ""
-        runtime: php:default
+        runtime: php:8.2
         web: true
         webSecure: false
         parameters: {}
