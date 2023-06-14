@@ -4,11 +4,36 @@ packages:
   - name: book-me
     shared: false
     environment:
-      beanstalkd_host: ${BEANSTALKD_HOST}
+      BEANSTALKD_HOST: "${BEANSTALKD_HOST}"
+      MARIADB_HOST: "${MARIADB_HOST}"
+      MARIADB_PORT: "${MARIADB_PORT}"
+      MARIADB_USER: "${MARIADB_USER}"
+      MARIADB_PASS: "${MARIADB_PASS}"
+      MARIADB_DBNAME: "${MARIADB_DBNAME}"
     parameters: {}
     annotations: {}
     functions:
       - name: book
+        binary: false
+        main: ""
+        runtime: php:8.2
+        web: true
+        webSecure: false
+        parameters: {}
+        environment: {}
+        annotations: {}
+        limits: {}
+      - name: add-company
+        binary: false
+        main: ""
+        runtime: php:8.2
+        web: true
+        webSecure: false
+        parameters: {}
+        environment: {}
+        annotations: {}
+        limits: {}
+      - name: add-product
         binary: false
         main: ""
         runtime: php:8.2
